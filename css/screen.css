@@ -231,6 +231,7 @@ html{
 }
 
 #loader .loader{
+    display: none;
     width: 100%;
     font-size: 5em;
     font-weight: 700;

@@ -78,12 +78,21 @@ function debug(data) {
     }
 }
 
+var loaderTimeout = null;
 function showLoader() {
+    clearTimeout( loaderTimeout );
+    loaderTimeout = null;
+    
+    $('#loader .loader').show();
+    $('#loader .loader').height();
     $('#loader').addClass('loading');
 }
 
 function hideLoader() {
     $('#loader').removeClass('loading');
+    loaderTimeout = setTimeout(function(){
+        $('#loader .loader').hide();
+    }, 300)
 }
 
 
