@@ -135,6 +135,19 @@ function renderTalks(talksList) {
 
     $talks.html('');
     talksList.forEach(function(talk) {
-        $talks.append('<li><h2>'+talk.title+'</h2><img src="'+talk.image+'" title="'+talk.title+'" alt="'+talk.title+'" /><p>'+talk.speaker+'<img src="'+talk.avatar+'" alt="'+talk.speaker+'" title="'+talk.speaker+'" /></p><a href="'+talk.slides+'">Ir a la presentación</a></li>');
+        $talks.append('<li class="item"><div class="main-img img" style="background-image: url('+talk.image+');"></div><div class="title-holder"><h3 class="title">'+talk.title+'</h3><a href="'+talk.slides+'" class="link">Ver Slides</a></div><div class="speaker"><div class="avatar" style="background-image: url('+talk.avatar+');"></div><p class="name">'+talk.speaker+'</p></div></li>');
     });
 }
+
+
+// <li class="item">
+    // <div class="main-img img" style="background-image: url('+talk.image+');"></div>
+    // <div class="title-holder">
+        // <h3 class="title">'+talk.title+'</h3>
+        // <a href="'+talk.slides+'" class="link">Ver Slides</a>
+    // </div>
+    // <div class="speaker">
+        // <div class="avatar" style="background-image: url('+talk.avatar+');"></div>
+        // <p class="name">'+talk.speaker+'</p>
+    // </div>
+// </li>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <link rel="preconnect  dns-prefetch" href="//code.jquery.com"> 
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <title>PTP Talks</title>
+
+        <meta name="robots" content="index,follow" />
+
+        <meta name="description" content="Todas las charlas que se llevan a cabo en el Polo Tecnológico Ponce" />
+        <meta name="keywords" content="Tecnología, Speakers, Meetups, Conferencias, Digital, Charlas, Talks" />
+        <meta name="verify-v1" content="" />
+        <meta name="google-site-verification" content="" />
+        <meta name="msvalidate.01" content="" />
+        <meta name="generator" content="" />
+        <meta name="author" content="Matías Fuster">
+
+        <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+        <link rel="canonical" href="http://talks.polotecnologicoponce.com/" />
+        <link rel="image_src" type="image/jpeg" href="http://talks.polotecnologicoponce.com/images/logo.png" />
+
+        <meta property="og:image" content="http://talks.polotecnologicoponce.com/images/logo.png"/>
+        <meta property="og:image:width" content="1200"/>
+        <meta property="og:image:height" content="630"/>
+        <meta property="og:title" content="PTP Talks"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="http://talks.polotecnologicoponce.com/images/logo.png"/>
+        <meta property="og:site_name" content="PHP Talks" />
+        <meta property="og:description" content="Todas las charlas que se llevan a cabo en el Polo Tecnológico Ponce" />
+
+                        
+
+        <!-- CSS -->
+        <style>
+
+        /* http://meyerweb.com/eric/tools/css/reset/ 
+    v2.0 | 20110126
+    License: none (public domain)
+        */
+
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed, 
+        figure, figcaption, footer, header, hgroup, 
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+            text-decoration:none;
+        }
+        /* HTML5 display-role reset for older browsers */
+        article, aside, details, figcaption, figure, 
+        footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+        /*body {
+                line-height: 1;
+        }*/
+        ol, ul {
+            list-style: none;
+        }
+        blockquote, q {
+            quotes: none;
+        }
+        blockquote:before, blockquote:after,
+        q:before, q:after {
+            content: '';
+            content: none;
+        }
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        article, aside, figure, footer, header, hgroup, menu, nav, section {
+            display:block;
+        }
+
+        /* BODY */
+
+        body{
+            font-size: 62.5%;
+        }
+        body, input, textarea, select, button{
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-text-size-adjust: none;
+            font-family: 'proxima-nova', sans-serif;
+            font-weight: 400;
+            color: #666666;
+        }
+        p{
+            text-rendering: optimizeLegibility;
+        }
+        strong{
+            font-weight: 700;
+        }
+        em{
+            font-style: italic;
+        }
+        input, textarea, select, button{
+            border: none;
+            outline: none;
+            resize: none;
+            border-radius: 0;
+            background-color: transparent;
+            padding: 0;
+            margin: 0;
+        }
+        input:not([type="checkbox"]):not([type="radio"]), textarea, select, button{
+            -webkit-appearance: none;
+        }
+
+        button{
+            overflow: visible;
+        }
+
+        a, button{
+            color: #001c61;
+            -webkit-tap-highlight-color: rgba(45,59,104,0.3);
+            cursor: pointer;
+            outline: none;
+
+            transition:
+                color 300ms ease-out,
+                background 300ms ease-out,
+                border 300ms ease-out,
+                opacity 300ms ease-out,
+                box-shadow 300ms ease-out;
+            -webkit-transition:
+                color 300ms ease-out,
+                background 300ms ease-out,
+                border 300ms ease-out,
+                opacity 300ms ease-out,
+                box-shadow 300ms ease-out;
+            -moz-transition:
+                color 300ms ease-out,
+                background 300ms ease-out,
+                border 300ms ease-out,
+                opacity 300ms ease-out,
+                box-shadow 300ms ease-out;
+            -o-transition:
+                color 300ms ease-out,
+                background 300ms ease-out,
+                border 300ms ease-out,
+                opacity 300ms ease-out,
+                box-shadow 300ms ease-out;
+        }
+
+        img{
+            display:inline-block;
+            max-width: 100%;
+        }
+
+
+
+        /* HIDDENS */
+
+        @media (max-width: 767px) {
+            .hidden-xs{
+                display: none !important;
+            }
+        }
+        @media (min-width: 768px) and (max-width: 979px) {
+            .hidden-sm{
+                display: none !important;
+            }
+        }
+        @media (min-width: 980px) and (max-width: 1199px) {
+            .hidden-md{
+                display: none !important;
+            }
+        }
+        @media (min-width: 1200px) {
+            .hidden-lg{
+                display: none !important;
+            }
+        }
+
+
+
+        /* ******* MOBILE ******* */
+
+        /* GENERAL */
+
+        .notVisible{
+            position: absolute;
+            left: -9999px;
+        }
+        .scrollable{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        .scrollable.scroll-x{
+            overflow:hidden;
+            overflow-x:auto;
+        }
+
+
+        .text{
+            font-size: 1.5em;
+            line-height: 1.4;
+        }
+
+
+        .subtitle{
+            color: #001c61;
+            font-weight: 700;
+            font-size: 2.2em;
+        }
+
+
+        /* STRUCTURE */
+
+        .wrapper{
+            width: 100%;
+            max-width: 1320px;
+            margin-right: auto;
+            margin-left: auto;
+            padding-left: 30px;
+            padding-right: 30px;
+
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+
+        /* ALIGNS */
+
+        .align-m{
+            height: 100%;
+        }
+        .align-m:before{
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+        }
+        .align-m > .align{
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .notInit .notInitHide{
+            visibility: hidden;
+            position: absolute;
+            left: -9999px;
+        }
+
+        .section{
+            padding-top: 55px;
+            padding-bottom: 55px;
+        }
+
+        /* Btns */
+
+        .border-btn{
+            display: inline-block;
+            padding: 10px 15px 12px;
+            border: 1px solid #2d3b68;
+            color: #2d3b68;
+            font-size: 1.5em;
+            font-weight: 700;
+        }
+        .arrow-link{
+            font-size: 1.5em;
+            color: #606060;
+            font-weight: 700;
+        }
+        .arrow-link:after{
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            width: 5px;
+            height: 5px;
+            margin-left: 6px;
+            margin-top: -2px;   
+            border: solid #606060;
+            border-width: 0 2px 2px 0;
+
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+
+        }
+
+        /* Image */
+
+        .image{
+            background-size: cover;
+            background-position:center;
+            background-repeat: no-repeat;
+            background-color:#f8f8f8;
+        }
+    </style>
+    <link href="css/screen.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+</head>
+<body>
+    <div id="topbar">
+        <div class="wrapper">
+            <form id="search" method="get" action="">
+                <input id="search-term" type="text" value="" />
+            </form>
+        </div>
+    </div>
+    <header class="header">
+        <div class="wrapper">
+            <nav>
+                <h2>Navegación</h2>
+                <ul id="menu">
+                    <li class="selected">
+                        <a href="#" title="Charlas" onclick="fetchTalks(); return false;">Charlas</a>
+                    </li>
+                    <li>
+                        <a href="#" title="Charlas">Speakers</a>
+                    </li>
+                    <li>
+                        <a href="#" title="Charlas">Calendario</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="main">
+        <h1>Charlas</h1>
+        <ul id="talks">
+        </ul>
+    </section>
+    <footer id="footer">
+
+    </footer>
+
+    <script defer src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script defer src="/js/main.js"></script>
+
+</body>
+</html>
