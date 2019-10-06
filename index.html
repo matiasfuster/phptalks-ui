@@ -71,7 +71,19 @@
 
 
             <section id="main">
-                <h2 class="main-title">Charlas</h2>
+                <div class="top">
+                    <h2 class="main-title">Charlas</h2>
+
+                    <div class="sort">
+                        <span class="text">Ordenar por</span>
+                        <label class="select">
+                            <select name="sort" id="sort">
+                                <option value="0" selected>Fecha</option>
+                                <option value="1">Me gusta</option>
+                            </select>
+                        </label>
+                    </div>
+                </div> <!-- .top -->
                 <ul id="talks" class="talks scrollable scroll-x">
                 </ul>
             </section>

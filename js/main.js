@@ -86,13 +86,15 @@ function showLoader() {
     $('#loader .loader').show();
     $('#loader .loader').height();
     $('#loader').addClass('loading');
+    $('html').addClass('blockScroll');
 }
 
 function hideLoader() {
     $('#loader').removeClass('loading');
     loaderTimeout = setTimeout(function(){
         $('#loader .loader').hide();
-    }, 300)
+        $('html').removeClass('blockScroll');
+    }, 300);
 }
 
 
@@ -144,7 +146,7 @@ function renderTalks(talksList) {
 
     $talks.html('');
     talksList.forEach(function(talk) {
-        $talks.append('<li class="item"><div class="main-img img" style="background-image: url('+talk.image+');"></div><div class="title-holder"><h3 class="title">'+talk.title+'</h3><a href="'+talk.slides+'" class="link">Ver Slides</a></div><div class="speaker"><div class="avatar" style="background-image: url('+talk.avatar+');"></div><p class="name">'+talk.speaker+'</p></div></li>');
+        $talks.append('<li class="item"><div class="main-img img" style="background-image: url('+talk.image+');"></div><div class="title-holder"><h3 class="title">'+talk.title+'</h3><a href="'+talk.slides+'" class="link">Ver Slides</a></div><div class="speaker"><div class="avatar" style="background-image: url('+talk.avatar+');"></div><p class="name">'+talk.speaker+'</p></div><button type="button" class="like">Me gusta</button></li>');
     });
 }
 
@@ -159,4 +161,5 @@ function renderTalks(talksList) {
         // <div class="avatar" style="background-image: url('+talk.avatar+');"></div>
         // <p class="name">'+talk.speaker+'</p>
     // </div>
+    // <button type="button" class="like">Me gusta</button>
 // </li>

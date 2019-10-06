@@ -265,6 +265,17 @@ html{
     animation: loading 500ms linear infinite;
 }
 
+html.blockScroll,
+html.blockScroll #loader .viewport{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+html.blockScroll body{
+    width: 100%;
+    height: 100%;
+}
+
 
 
 /* HEADER */
@@ -388,13 +399,65 @@ html{
     padding: 0 0 0 220px;
     margin-top: 70px;
 }
-#main .main-title{
+#main .top{
+    position: relative;
+}
+#main .top .main-title{
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 30px;
     font-size: 4em;
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 0.1em;
     color: #fff;
     text-shadow: 4px 4px 0px #ff5555;
+}
+#main .top .sort,
+#main .top .sort .text,
+#main .top .sort .select{
+    display: inline-block;
+    vertical-align: middle;
+}
+#main .top .sort{
+    position: absolute;
+    right: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#main .top .sort .text{
+    font-size: 1.6em;
+    margin-right: 10px;
+}
+#main .top .sort .select{
+    position: relative;
+}
+#main .top .sort .select:after{
+    content: "";
+    display: block;
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    right: 17px;
+    top: 50%;
+    z-index: -1;
+    margin-top: -3px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: translateY(-50%) rotate(45deg);
+}
+#main .top .sort .select select{
+    padding: 8px 25px;
+    padding-right: 40px;
+    font-size: 1.6em;
+    border-radius: 50px;
+    border: 2px solid rgba(255,255,255,0.2);
+    transition: border-color 200ms ease-out;
+    cursor: pointer;
+}
+#main .top .sort .select select:focus,
+#main .top .sort .select select:hover{
+    border-color: rgba(255,255,255,1);
 }
 
 #main .talks{
@@ -497,6 +560,62 @@ html{
     font-weight: 700;
     text-transform: uppercase;
     color: #ff5555;
+}
+
+#main .talks .item .like{
+    display: inline-block;
+    margin-top: 17px;
+    position: relative;
+    top: -4px;
+    font-size: 1.7em;
+    padding: 8px 0;
+    transform: translate3d(0, 0, 0);
+    transition:
+        transform 150ms ease-out,
+        color 150ms ease-out;
+}
+#main .talks .item .like:before{
+    content: "";
+    display: block;
+    width: 11px;
+    height: 16px;
+    border: solid #00ffff;
+    border-width: 0 4px 4px 0;
+    box-sizing: border-box;
+    position: absolute;
+    left: -20px;
+    top: 7px;
+    transform: rotate(45deg);
+    transition: opacity 150ms ease-out;
+    opacity: 0;
+}
+#main .talks .item .like.is-liked{
+    color: #00ffff;
+    font-weight: 700;
+    transform: translate3d(20px, 0, 0);
+}
+#main .talks .item .like.is-liked:before{
+    opacity: 1;
+}
+
+#main .talks .item .like:after{
+    content: "";
+    display: block;
+    width: 0%;
+    height: 3px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: #ff5555;
+    opacity: 0;
+    transition:
+        width 200ms ease-out,
+        opacity 200ms ease-out;
+}
+#main .talks .item .like:hover:after,
+#main .talks .item .like:focus:after{
+    width: 100%;
+    opacity: 1;
 }
 
 
