@@ -1,0 +1,34 @@
+{
+  "name": "ptptalks-ui",
+  "version": "1.0.0",
+  "description": "Website to display all the talks that take place at PTP.",
+  "main": "js/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matiasfuster/ptptalks-ui.git"
+  },
+  "keywords": [
+    "ptp",
+    "meetups",
+    "talks",
+    "technology",
+    "montevideo",
+    "uruguay"
+  ],
+  "author": "Matias Fuster",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matiasfuster/ptptalks-ui/issues"
+  },
+  "homepage": "https://github.com/matiasfuster/ptptalks-ui#readme",
+  "devDependencies": {
+    "grunt": "^1.0.4",
+    "grunt-cli": "^1.3.2",
+    "grunt-env": "^1.0.1",
+    "grunt-json": "^0.2.0"
+  },
+  "dependencies": {}
+}
