@@ -1,75 +1,10 @@
 var DEBUG = true;
 
-var CONFIG = {
-    base_url : 'http://localhost:8000',
-    endpoints : {
-        talks : {
-            listAll : {
-                method : 'get',
-                path : '/talks'
-            }
-        }
-    }
-};
-
-var MOCKED_TALK_LIST = [
-    {
-        "speaker" : "Matías Fuster",
-        "avatar" : "https://api.columnis.com/uploads/046/images/thumbs/122_12_80@2.jpg",
-        "title" : "Continuous Integration en AWS y Azure",
-        "image" : "https://techpatrol.com.au/wp-content/uploads/2019/02/AWS-Azure-The-Difference-Tech-Patrol.png",
-        "slides" : "",
-        "tags" : [ "ci", "aws", "azure", "deployment", "agile"]
-    },
-    {
-        "speaker" : "Agustín Tabárez",
-        "avatar" : "https://api.columnis.com/uploads/046/images/thumbs/122_36_80@2.jpg",
-        "title" : "Introducción a Docker",
-        "image" : "https://www.nclouds.com/blog/wp-content/uploads/2018/10/reduce_docker_image_size_by_45.jpg",
-        "slides" : "",
-        "tags" : [ "docker", "container", "compose", "portability", "development", "deployment"]
-    },
-    {
-        "speaker" : "Matías Fuster",
-        "avatar" : "https://api.columnis.com/uploads/046/images/thumbs/122_12_80@2.jpg",
-        "title" : "Continuous Integration en AWS y Azure",
-        "image" : "https://techpatrol.com.au/wp-content/uploads/2019/02/AWS-Azure-The-Difference-Tech-Patrol.png",
-        "slides" : "",
-        "tags" : [ "ci", "aws", "azure", "deployment", "agile"]
-    },
-    {
-        "speaker" : "Agustín Tabárez",
-        "avatar" : "https://api.columnis.com/uploads/046/images/thumbs/122_36_80@2.jpg",
-        "title" : "Introducción a Docker",
-        "image" : "https://www.nclouds.com/blog/wp-content/uploads/2018/10/reduce_docker_image_size_by_45.jpg",
-        "slides" : "",
-        "tags" : [ "docker", "container", "compose", "portability", "development", "deployment"]
-    },
-    {
-        "speaker" : "Matías Fuster",
-        "avatar" : "https://api.columnis.com/uploads/046/images/thumbs/122_12_80@2.jpg",
-        "title" : "Continuous Integration en AWS y Azure",
-        "image" : "https://techpatrol.com.au/wp-content/uploads/2019/02/AWS-Azure-The-Difference-Tech-Patrol.png",
-        "slides" : "",
-        "tags" : [ "ci", "aws", "azure", "deployment", "agile"]
-    },
-    {
-        "speaker" : "Agustín Tabárez",
-        "avatar" : "https://api.columnis.com/uploads/046/images/thumbs/122_36_80@2.jpg",
-        "title" : "Introducción a Docker",
-        "image" : "https://www.nclouds.com/blog/wp-content/uploads/2018/10/reduce_docker_image_size_by_45.jpg",
-        "slides" : "",
-        "tags" : [ "docker", "container", "compose", "portability", "development", "deployment"]
-    }
-];
-
-
-
 function parseRoute(path, args) {
     for (var rep in args) {
         path = path.replace(":"+rep, args[rep]);  
     }
-    return CONFIG.base_url + path;
+    return CONFIG["api"].base_url + path;
 }
 
 function debug(data) {
@@ -127,20 +62,31 @@ function makeAPIRequest(url, method, successCallback, errorCallback, body) {
 
 
 function fetchTalks() {
-    var url = parseRoute(CONFIG.endpoints.talks.listAll.path);
-    var method = CONFIG.endpoints.talks.listAll.method;
+    var url = parseRoute(CONFIG["api"].endpoints.talks.listAll.path);
+    var method = CONFIG["api"].endpoints.talks.listAll.method;
     makeAPIRequest(
         url, 
         method, 
         function(response) {
-            renderTalks(MOCKED_TALK_LIST);
+            if (response.status !== 200) {
+                showError(response);
+                return;
+            }
+      
+            // Examine the text in the response
+            response.json().then(function(data) {
+                renderTalks(data)
+            });
         },
         function(err) {            
-            renderTalks(MOCKED_TALK_LIST);
+            showError(err);
         }
     );
 }
 
+function showError(err) {
+    // Do something
+}
 function renderTalks(talksList) {
     var $talks = $('#talks');
 

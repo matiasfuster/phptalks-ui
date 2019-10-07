@@ -1,0 +1,11 @@
+{
+    "base_url" : "",
+    "endpoints" : {
+        "talks" : {
+            "listAll" : {
+                "method" : "get",
+                "path" : "/talks"
+            }
+        }
+    }
+}
