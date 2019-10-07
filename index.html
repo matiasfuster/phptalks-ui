@@ -29,323 +29,71 @@
         <meta property="og:site_name" content="PHP Talks" />
         <meta property="og:description" content="Todas las charlas que se llevan a cabo en el Polo Tecnológico Ponce" />
 
-                        
-
-        <!-- CSS -->
-        <style>
-
-        /* http://meyerweb.com/eric/tools/css/reset/ 
-    v2.0 | 20110126
-    License: none (public domain)
-        */
-
-        html, body, div, span, applet, object, iframe,
-        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-        a, abbr, acronym, address, big, cite, code,
-        del, dfn, em, img, ins, kbd, q, s, samp,
-        small, strike, strong, sub, sup, tt, var,
-        b, u, i, center,
-        dl, dt, dd, ol, ul, li,
-        fieldset, form, label, legend,
-        table, caption, tbody, tfoot, thead, tr, th, td,
-        article, aside, canvas, details, embed, 
-        figure, figcaption, footer, header, hgroup, 
-        menu, nav, output, ruby, section, summary,
-        time, mark, audio, video {
-            margin: 0;
-            padding: 0;
-            border: 0;
-            font-size: 100%;
-            font: inherit;
-            vertical-align: baseline;
-            text-decoration:none;
-        }
-        /* HTML5 display-role reset for older browsers */
-        article, aside, details, figcaption, figure, 
-        footer, header, hgroup, menu, nav, section {
-            display: block;
-        }
-        /*body {
-                line-height: 1;
-        }*/
-        ol, ul {
-            list-style: none;
-        }
-        blockquote, q {
-            quotes: none;
-        }
-        blockquote:before, blockquote:after,
-        q:before, q:after {
-            content: '';
-            content: none;
-        }
-        table {
-            border-collapse: collapse;
-            border-spacing: 0;
-        }
-        article, aside, figure, footer, header, hgroup, menu, nav, section {
-            display:block;
-        }
-
-        /* BODY */
-
-        body{
-            font-size: 62.5%;
-        }
-        body, input, textarea, select, button{
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            -webkit-text-size-adjust: none;
-            font-family: 'proxima-nova', sans-serif;
-            font-weight: 400;
-            color: #666666;
-        }
-        p{
-            text-rendering: optimizeLegibility;
-        }
-        strong{
-            font-weight: 700;
-        }
-        em{
-            font-style: italic;
-        }
-        input, textarea, select, button{
-            border: none;
-            outline: none;
-            resize: none;
-            border-radius: 0;
-            background-color: transparent;
-            padding: 0;
-            margin: 0;
-        }
-        input:not([type="checkbox"]):not([type="radio"]), textarea, select, button{
-            -webkit-appearance: none;
-        }
-
-        button{
-            overflow: visible;
-        }
-
-        a, button{
-            color: #001c61;
-            -webkit-tap-highlight-color: rgba(45,59,104,0.3);
-            cursor: pointer;
-            outline: none;
-
-            transition:
-                color 300ms ease-out,
-                background 300ms ease-out,
-                border 300ms ease-out,
-                opacity 300ms ease-out,
-                box-shadow 300ms ease-out;
-            -webkit-transition:
-                color 300ms ease-out,
-                background 300ms ease-out,
-                border 300ms ease-out,
-                opacity 300ms ease-out,
-                box-shadow 300ms ease-out;
-            -moz-transition:
-                color 300ms ease-out,
-                background 300ms ease-out,
-                border 300ms ease-out,
-                opacity 300ms ease-out,
-                box-shadow 300ms ease-out;
-            -o-transition:
-                color 300ms ease-out,
-                background 300ms ease-out,
-                border 300ms ease-out,
-                opacity 300ms ease-out,
-                box-shadow 300ms ease-out;
-        }
-
-        img{
-            display:inline-block;
-            max-width: 100%;
-        }
-
-
-
-        /* HIDDENS */
-
-        @media (max-width: 767px) {
-            .hidden-xs{
-                display: none !important;
-            }
-        }
-        @media (min-width: 768px) and (max-width: 979px) {
-            .hidden-sm{
-                display: none !important;
-            }
-        }
-        @media (min-width: 980px) and (max-width: 1199px) {
-            .hidden-md{
-                display: none !important;
-            }
-        }
-        @media (min-width: 1200px) {
-            .hidden-lg{
-                display: none !important;
-            }
-        }
-
-
-
-        /* ******* MOBILE ******* */
-
-        /* GENERAL */
-
-        .notVisible{
-            position: absolute;
-            left: -9999px;
-        }
-        .scrollable{
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-        .scrollable.scroll-x{
-            overflow:hidden;
-            overflow-x:auto;
-        }
-
-
-        .text{
-            font-size: 1.5em;
-            line-height: 1.4;
-        }
-
-
-        .subtitle{
-            color: #001c61;
-            font-weight: 700;
-            font-size: 2.2em;
-        }
-
-
-        /* STRUCTURE */
-
-        .wrapper{
-            width: 100%;
-            max-width: 1320px;
-            margin-right: auto;
-            margin-left: auto;
-            padding-left: 30px;
-            padding-right: 30px;
-
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-        }
-
-
-        /* ALIGNS */
-
-        .align-m{
-            height: 100%;
-        }
-        .align-m:before{
-            content: "";
-            display: inline-block;
-            vertical-align: middle;
-            height: 100%;
-        }
-        .align-m > .align{
-            display: inline-block;
-            vertical-align: middle;
-        }
-
-        .notInit .notInitHide{
-            visibility: hidden;
-            position: absolute;
-            left: -9999px;
-        }
-
-        .section{
-            padding-top: 55px;
-            padding-bottom: 55px;
-        }
-
-        /* Btns */
-
-        .border-btn{
-            display: inline-block;
-            padding: 10px 15px 12px;
-            border: 1px solid #2d3b68;
-            color: #2d3b68;
-            font-size: 1.5em;
-            font-weight: 700;
-        }
-        .arrow-link{
-            font-size: 1.5em;
-            color: #606060;
-            font-weight: 700;
-        }
-        .arrow-link:after{
-            content: "";
-            display: inline-block;
-            vertical-align: middle;
-            width: 5px;
-            height: 5px;
-            margin-left: 6px;
-            margin-top: -2px;   
-            border: solid #606060;
-            border-width: 0 2px 2px 0;
-
-            -webkit-transform: rotate(-45deg);
-            -moz-transform: rotate(-45deg);
-            transform: rotate(-45deg);
-
-        }
-
-        /* Image */
-
-        .image{
-            background-size: cover;
-            background-position:center;
-            background-repeat: no-repeat;
-            background-color:#f8f8f8;
-        }
-    </style>
     <link href="css/screen.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 </head>
-<body>
-    <div id="topbar">
-        <div class="wrapper">
-            <form id="search" method="get" action="">
-                <input id="search-term" type="text" value="" />
-            </form>
-        </div>
-    </div>
-    <header class="header">
-        <div class="wrapper">
-            <nav>
-                <h2>Navegación</h2>
-                <ul id="menu">
-                    <li class="selected">
-                        <a href="#" title="Charlas" onclick="fetchTalks(); return false;">Charlas</a>
-                    </li>
-                    <li>
-                        <a href="#" title="Charlas">Speakers</a>
-                    </li>
-                    <li>
-                        <a href="#" title="Charlas">Calendario</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <section id="main">
-        <h1>Charlas</h1>
-        <ul id="talks">
-        </ul>
-    </section>
-    <footer id="footer">
+<body id="loader">
 
-    </footer>
+    <div class="viewport">
+
+        <div class="wrapper">
+
+            <header id="header">
+                <h1 class="logo">
+                    <a href="/" tabindex="-1"><span class="notVisible">PTP Talks</span></a>
+                </h1>
+                <nav class="nav">
+                    <h2 class="notVisible">Navegación</h2>
+                    <ul class="menu">
+                        <li class="active">
+                            <a href="#" title="Charlas" onclick="fetchTalks(); return false;">Charlas</a>
+                        </li>
+                        <li>
+                            <a href="#" title="Speakers">Speakers</a>
+                        </li>
+                        <li>
+                            <a href="#" title="Calendario">Calendario</a>
+                        </li>
+                    </ul>
+                </nav>
+                <form id="search" method="get" action="">
+                    <input id="search-term" type="search" value="" placeholder="¿Qué querés aprender?" />
+                </form>
+            </header>
+
+        </div> <!-- .wrapper -->
+
+
+        <main>
+
+
+            <section id="main">
+                <div class="top">
+                    <h2 class="main-title">Charlas</h2>
+
+                    <div class="sort">
+                        <span class="text">Ordenar por</span>
+                        <label class="select">
+                            <select name="sort" id="sort">
+                                <option value="0" selected>Fecha</option>
+                                <option value="1">Me gusta</option>
+                            </select>
+                        </label>
+                    </div>
+                </div> <!-- .top -->
+                <ul id="talks" class="talks scrollable scroll-x">
+                </ul>
+            </section>
+
+        </main>
+
+    </div> <!-- .viewport -->
+
+    <div class="loader">Cargando</div>
+
 
     <script defer src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script defer src="/js/main.js"></script>
